@@ -1,0 +1,41 @@
+{% extends "posts/base.html" %}
+{% block content %}
+<div class="jumbotron m-3">
+<img src="{{ object.pic.url }}" class="img-post"/>
+  <h1 class="text-left m-3">
+    <strong> {{object.title}} </strong>
+  </h1>
+  <p class="card-text m-3">
+    <small class="text-muted"
+      >Posted by <a href="{% url 'user-posts' object.author.username %}"> {{object.author}} </a> on {{object.post_date|date:"F d, Y"}}  </small
+    >
+{% if object.author == user %}
+<div class="text-left m-3">
+    <a class="btn btn-outline-success btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+</div>
+</p>
+
+{% endif %}
+  <p class="card-text m-3">
+    {{object.content}}
+  </p>
+</div>
+<div class="text-left m-3 container">
+
+        <h5 class="counter-1">{{post.comments.count}}  Answer{{ post.comments.all|pluralize }} </h5>
+        <a class="btn btn-primary" href="{% url 'add_comment_to_post' pk=post.pk %}">Add answer</a>
+        {% for comment in post.comments.all %}
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body text-left">
+        <p class="card-text text-left ml-3">{{ comment.text|safe|linebreaks }}</p>
+        <p class="text-muted"> Posted by {{ comment.author|capfirst }}</p>
+      </div>
+      </div>
+    </div>
+   {% empty %}
+      <p>No answers posted.</p>
+  {% endfor %}
+</div>
+{% endblock content %}
