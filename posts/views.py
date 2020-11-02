@@ -6,15 +6,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 
-def home(request): 
-    context={
-        'posts':Post.objects.all(),
-    }
-    return render(request,'posts/home.html',context)
+def home(request):
+    return render(request,'posts/home.html')
 
 class PostListView(ListView):
     model = Post
-    template_name='posts/home.html'
+    template_name='posts/doubts.html'
     context_object_name = 'posts'
     ordering=['-post_date']
     paginate_by= 4
