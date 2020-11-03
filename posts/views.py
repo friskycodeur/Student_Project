@@ -1,4 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.db.models import Q
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from .models import Post,Comment
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
@@ -15,6 +16,8 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering=['-post_date']
     paginate_by= 4
+
+
 
 
 class UserPostListView(ListView):
@@ -81,3 +84,11 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
         return render(request, 'posts/comment_form.html', {'form': form})
+
+
+def search(request):
+    query = request.GET.get('query', None)
+    allposts=Post.objects.filter(title__icontains=query)
+    params={'allposts':allposts,}
+    return render(request,'posts/search.html',params)
+

@@ -3,17 +3,17 @@
 {% for lecture in lectures %}
 
 <div class="text-center">
-<div class="card mb-3 ml-0 article col-12" >
+<div class="card article col-11 m-3" >
     <div class="row no-gutters">
-      <div class="col-md-8">
-        <div class="card-body text-left">
+      <div class="col-md-12">
+        <div class="card-body text-right">
             <h5 class=" card-title">
               <strong>  {{lecture.name}} <p class="text-muted"> by {{lecture.speaker}}</p> </strong>
               <div class="category">{{lecture.subject}}</div>
             </h5>
           </div>
-          <div class="m-3">
-          <a href="" class="btn btn-primary btn-block">Start Lecture</a>
+          <div class="m-3 text-right">
+          <a href="" class="btn btn-primary">Start Lecture</a>
         </div>
         </div>
       </div>

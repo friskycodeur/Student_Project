@@ -1,31 +1,26 @@
-{% extends "posts/base.html "%}
+{% extends "posts/base.html" %}
 {% block content %}
-<div class="text-center m-3">
-<h1 class="mb-3 text-center"> Doubts by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
-</div>
-{% for post in posts %}
+{% for post in allposts %}
 
 
-<div class="text-center">
-  <div class="card m-3 article col-11" >
-      <div class="row no-gutters">
-        <div class="col-md-11">
-          <div class="card-body text-left">
-              <h5 class=" card-title">
-                <strong> <a href="{% url 'post-detail' post.id %}" class="post_title"> {{post.title}} </a> </strong>
-              </h5>
-              <small class="text-muted"
-                >Posted by <a href="{% url 'user-posts' post.author.username %}"> {{post.author}} </a> on {{post.post_date|date:"F d, Y"}}  </small
-              >
-            </div>
-            
-            <p class="card-text text-left ml-3">
-              {{post.content|truncatechars:250}}
-            </p>
-            <p class="card-text">
-              
-            </p>
+<div class="card article col-11 m-3" >
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <div class="card-body text-left">
+            <h5 class=" card-title">
+              <strong> <a href="{% url 'post-detail' post.id %}" class="post_title"> {{post.title}} </a> </strong>
+            </h5>
+            <small class="text-muted"
+              >Posted by <a href="{% url 'user-posts' post.author.username %}"> {{post.author}} </a> on {{post.post_date|date:"F d, Y"}}  </small
+            >
           </div>
+          
+          <p class="card-text text-left ml-3">
+            {{post.content|truncatechars:250}}
+          </p>
+          <p class="card-text">
+            
+          </p>
         </div>
       </div>
     </div>

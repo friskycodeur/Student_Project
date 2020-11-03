@@ -2,52 +2,65 @@
 {% load static %}
 {% block content %}
 
-<section>
-  <div class="card card-1 text-center">
-    <div class="card-header">
-      Section Template
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Space for Lectures Section</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quam aut laborum aliquid hic quidem beatae labore aliquam aperiam odio.</p>
+
+<section class="container mt-3 rounded mb-3 showcase text-center home-container">
+  <div class="showcase-content">
+    <div class="jumbotron home-jumbotron">
+      <img src="https://www.appsquadz.com/img/live_class_soft.jpg" alt="" class="img-rounded img rounded-circle">
+      <h1 class="l-heading">
+          Live Classes 
+      </h1>
+      <p class="lead">Get ahead of the world , learn from the best tutors out there!</p>
+      <a href="#what" class="btn btn-primary">Join Class</a>
+    </div> 
+  </div>
+</section>
+<section class="container rounded mb-3 showcase text-center home-container">
+  <div class="showcase-content">
+    <div class="jumbotron home-jumbotron">
+      <img src="https://www.appsquadz.com/img/live_class_soft.jpg" alt="">
+      <h1 class="l-heading">
+          Watch lectures by Top Faculty
+      </h1>
+      <p class="lead">Understand better with lectures from the best faculty around</p>
       <a href="{% url 'lectures' %}" class="btn btn-primary">Watch Lectures</a>
-    </div>
+    </div> 
   </div>
 </section>
-<section>
-  <div class="card card-1 text-center">
-    <div class="card-header">
-      Section Template
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Space for Doubts Section</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quam aut laborum aliquid hic quidem beatae labore aliquam aperiam odio.</p>
-      <a href="{% url 'doubts' %}" class="btn btn-primary">Ask Doubts</a>
-    </div>
+<section class="container mb-3 showcase rounded mt-3 text-center home-container">
+  <div class="showcase-content">
+    <div class="jumbotron home-jumbotron">
+      <img src="https://www.appsquadz.com/img/live_class_soft.jpg" alt="">
+      <h1 class="l-heading">
+          Enrol in Courses
+      </h1>
+      <p class="lead">Get the best package of content and study at your own pace.</p>
+      <a href="{% url 'courses' %}" class="btn-primary btn">Explore Courses</a>
+    </div> 
   </div>
 </section>
-<section>
-  <div class="card card-1 text-center">
-    <div class="card-header">
-      Section Template
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Space for Books Section</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quam aut laborum aliquid hic quidem beatae labore aliquam aperiam odio.</p>
-      <a href="{% url 'lectures' %}" class="btn btn-primary">Download Books</a>
-    </div>
+<section class="container mb-3 showcase rounded mt-3 text-center home-container">
+  <div class="showcase-content">
+    <div class="jumbotron home-jumbotron">
+      <img src="https://www.appsquadz.com/img/live_class_soft.jpg" alt="">
+      <h1 class="l-heading">
+          Ask your doubts
+      </h1>
+      <p class="lead">Stuck somewhere in studies , get your problem solved by experts today !</p>
+      <a href="{% url 'post-create' %}" class="btn-primary btn">Ask doubt</a>
+    </div> 
   </div>
 </section>
-<section>
-  <div class="card card-1 text-center">
-    <div class="card-header">
-      Section Template
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Space for Courses Section</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quam aut laborum aliquid hic quidem beatae labore aliquam aperiam odio.</p>
-      <a href="{% url 'lectures' %}" class="btn btn-primary">Explore Courses</a>
-    </div>
+<section class="container mb-3 showcase rounded mt-3 text-center home-container">
+  <div class="showcase-content">
+    <div class="jumbotron home-jumbotron">
+      <img src="https://www.appsquadz.com/img/live_class_soft.jpg" alt="">
+      <h1 class="l-heading">
+          Download free ebooks
+      </h1>
+      <p class="lead">Get the best books in your hands , and ace that exam you are preparing for!</p>
+      <a href="{% url 'books' %}" class="btn-primary btn">Explore Books</a>
+    </div> 
   </div>
 </section>
 
